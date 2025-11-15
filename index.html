@@ -315,6 +315,28 @@
             margin-bottom: var(--spacing-xs);
         }
 
+        .plan__tagline {
+            font-size: 0.9rem;
+            color: var(--color-secondary);
+            font-style: italic;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .plan__description {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .plan__icon--duo {
+            color: var(--color-secondary);
+        }
+
+        .plan__icon--familia {
+            color: var(--color-accent);
+        }
+
         .plan__price {
             font-size: 2rem;
             font-weight: 700;
@@ -683,7 +705,7 @@
             }
 
             .plans {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             }
 
             .preview__grid {
@@ -713,6 +735,10 @@
             .hero__content {
                 max-width: none;
                 margin: 0;
+            }
+
+            .plans {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
 
             .preview__grid {
@@ -919,6 +945,78 @@
                     </ul>
                     <a href="#contacto" class="btn btn--secondary">Elegir este plan</a>
                 </div>
+
+                <div class="plan">
+                    <i class="fas fa-user-friends plan__icon plan__icon--duo"></i>
+                    <h3 class="plan__title">Plan Dúo</h3>
+                    <p class="plan__tagline">Entrena en pareja, crece en equipo</p>
+                    <div class="plan__price">
+                        $600.000
+                        <span class="plan__price-period"> COP/mes</span>
+                    </div>
+                    <p class="plan__description">
+                        Ideal para quienes desean compartir su proceso de transformación con alguien más.
+                        Este plan combina entrenamiento semi-personalizado con dinámicas en pareja que
+                        fortalecen tanto el cuerpo como la motivación.
+                    </p>
+                    <ul class="plan__features">
+                        <li class="plan__feature">
+                            <i class="fas fa-check plan__feature-icon"></i>
+                            <span>Rutinas adaptadas a capacidades de cada uno</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-check plan__feature-icon"></i>
+                            <span>Seguimiento conjunto y personalizado</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-check plan__feature-icon"></i>
+                            <span>Acompañamiento constante y guía nutricional</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-check plan__feature-icon"></i>
+                            <span>Metas individuales dentro del trabajo en equipo</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--secondary">Entrenar en pareja</a>
+                </div>
+
+                <div class="plan">
+                    <i class="fas fa-users plan__icon plan__icon--familia"></i>
+                    <h3 class="plan__title">Plan Parche o Familia</h3>
+                    <p class="plan__tagline">Entrena con los tuyos</p>
+                    <div class="plan__price" style="font-size: 1.75rem;">
+                        Desde $260.000
+                        <span class="plan__price-period"> COP/mes</span>
+                    </div>
+                    <p class="plan__description">
+                        Porque entrenar en grupo no solo suma fuerza, también multiplica la motivación.
+                        Para amigos o familias que quieren entrenar juntos con objetivos similares,
+                        sin perder la atención semi-personalizada.
+                    </p>
+                    <ul class="plan__features">
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>1 persona: $260.000</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>2 personas: $500.000</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>3 personas: $700.000</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>4 personas: $860.000</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>5 personas: $1.000.000</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--secondary">Consultar grupo</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1060,7 +1158,7 @@
                         </div>
                         <div class="contact__text">
                             <span class="contact__label">WhatsApp</span>
-                            <span>+57 300 123 4567</span>
+                            <span>+57 318 761 8080</span>
                         </div>
                     </div>
 
@@ -1141,7 +1239,7 @@
     </section>
 
     <!-- WhatsApp flotante -->
-    <a href="https://wa.me/573001234567?text=Hola, quiero información sobre los planes de entrenamiento personalizado" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/573187618080?text=Hola Juan David, me interesa conocer más sobre tus planes de entrenamiento personalizado" class="whatsapp-float" target="_blank">
         <div class="whatsapp-float__btn">
             <i class="fab fa-whatsapp"></i>
         </div>
@@ -1157,7 +1255,7 @@
                 </p>
                 
                 <div class="footer__social">
-                    <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/juanda.entrenador_7?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="footer__social-link" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
                     <a href="#" class="footer__social-link"><i class="fab fa-tiktok"></i></a>
