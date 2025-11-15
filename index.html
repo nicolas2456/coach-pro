@@ -142,9 +142,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(10, 10, 15, 0.8), rgba(0, 255, 127, 0.1)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.85), rgba(0, 255, 127, 0.2));
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -154,6 +152,25 @@
             margin-top: 80px;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            opacity: 0.6;
+            filter: brightness(0.8) contrast(1.1);
         }
 
         .hero::before {
@@ -171,7 +188,7 @@
             max-width: 800px;
             margin: 0 auto;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         .hero__subtitle {
@@ -189,10 +206,8 @@
             font-weight: 800;
             margin-bottom: var(--spacing-sm);
             line-height: 1.1;
-            background: linear-gradient(45deg, var(--color-text), var(--color-primary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--color-text);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .hero__description {
@@ -723,8 +738,13 @@
                 visibility: visible;
             }
 
+            .hero__image img {
+                object-position: center 20%;
+                opacity: 0.5;
+            }
+
             .hero__title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .hero__stats {
@@ -763,19 +783,6 @@
             transform: translateY(0);
         }
 
-        /* Efectos especiales */
-        .glow {
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary), 0 0 30px var(--color-primary);
-            }
-            to {
-                text-shadow: 0 0 20px var(--color-primary), 0 0 30px var(--color-primary), 0 0 40px var(--color-primary);
-            }
-        }
     </style>
 </head>
 <body>
@@ -798,9 +805,12 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <div class="hero__image">
+            <img src="https://i.imgur.com/bLaGbkr.jpeg" alt="Juan David Martínez - Entrenador Personal" loading="lazy">
+        </div>
         <div class="hero__content">
             <p class="hero__subtitle">Entrenador Personal Certificado</p>
-            <h1 class="hero__title glow">Juan David Martínez</h1>
+            <h1 class="hero__title">Entrenador Personal Certificado</h1>
             <p class="hero__description">
                 Licenciado en Educación Física, apasionado por el movimiento y el potencial del cuerpo humano.
                 Transformo vidas a través del acompañamiento cercano y el conocimiento técnico.
