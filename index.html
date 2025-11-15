@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
+            <style>.lw { font-size: 60px; }</style>
+        </head>
+        <body>
+            
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan David Martínez - Entrenador Personal Bucaramanga</title>
-    <meta name="description" content="Entrenador Personal Certificado en Bucaramanga. Más de 3 años transformando vidas. Planes personalizados, semipersonalizados y online desde $260.000.">
+    <title>FitCoach Pro - Entrenamiento Personalizado en Bucaramanga</title>
+    <meta name="description" content="Transforma tu cuerpo con planes de entrenamiento personalizado. 200+ transformaciones exitosas en Bucaramanga. Primera consulta GRATIS.">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
     
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,15 +21,15 @@
     <style>
         /* Variables CSS */
         :root {
-            --color-primary: #00FF7F;
-            --color-secondary: #32CD32;
-            --color-accent: #ADFF2F;
-            --color-background: #0A0A0F;
-            --color-dark: #111111;
-            --color-card: #1A1A1A;
-            --color-text: #FFFFFF;
-            --color-text-light: #B0B0B0;
-            --color-gray: #333333;
+            --color-primary: #8B5CF6;        /* Púrpura vibrante */
+            --color-secondary: #06B6D4;      /* Cyan moderno */
+            --color-accent: #F59E0B;         /* Amber energético */
+            --color-background: #0F0F23;     /* Dark navy */
+            --color-dark: #1A1A2E;          /* Dark blue */
+            --color-card: #16213E;          /* Card background */
+            --color-text: #E2E8F0;          /* Light gray */
+            --color-text-light: #94A3B8;    /* Medium gray */
+            --color-white: #FFFFFF;
             
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Open Sans', sans-serif;
@@ -34,8 +40,8 @@
             --spacing-lg: 4rem;
             --spacing-xl: 6rem;
             
-            --border-radius: 0.75rem;
-            --box-shadow: 0 8px 32px rgba(0, 255, 127, 0.1);
+            --border-radius: 0.5rem;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
 
@@ -56,7 +62,6 @@
             line-height: 1.6;
             color: var(--color-text);
             background-color: var(--color-background);
-            overflow-x: hidden;
         }
 
         img {
@@ -67,16 +72,16 @@
 
         /* Header y navegación */
         .header {
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 255, 127, 0.1);
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
             padding: var(--spacing-sm) 0;
-            border-bottom: 1px solid rgba(0, 255, 127, 0.2);
         }
 
         .nav {
@@ -91,11 +96,9 @@
         .nav__logo {
             font-family: var(--font-heading);
             font-size: 1.5rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--color-primary);
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .nav__toggle {
@@ -116,98 +119,51 @@
         .nav__link {
             color: var(--color-text);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             transition: var(--transition);
-            position: relative;
         }
 
         .nav__link:hover {
             color: var(--color-primary);
         }
 
-        .nav__link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav__link:hover::after {
-            width: 100%;
-        }
-
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(10, 10, 15, 0.8), rgba(0, 255, 127, 0.1)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.85), rgba(139, 92, 246, 0.7), rgba(6, 182, 212, 0.6)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            color: var(--color-text);
+            color: var(--color-white);
             text-align: center;
             padding: var(--spacing-xl) var(--spacing-sm);
             margin-top: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(0, 255, 127, 0.1) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .hero__content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero__subtitle {
-            color: var(--color-primary);
-            font-weight: 600;
-            font-size: 1.125rem;
-            margin-bottom: var(--spacing-xs);
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .hero__title {
             font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: var(--spacing-sm);
-            line-height: 1.1;
-            background: linear-gradient(45deg, var(--color-text), var(--color-primary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
         }
 
-        .hero__description {
+        .hero__subtitle {
             font-size: 1.25rem;
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
             opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .hero__stats {
             display: flex;
             justify-content: center;
-            gap: var(--spacing-lg);
+            gap: var(--spacing-md);
             margin-bottom: var(--spacing-lg);
             flex-wrap: wrap;
         }
@@ -218,22 +174,19 @@
 
         .hero__stat-number {
             display: block;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--color-primary);
-            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-accent);
         }
 
         .hero__stat-text {
             font-size: 0.875rem;
             opacity: 0.8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .btn {
             display: inline-block;
-            padding: var(--spacing-sm) var(--spacing-lg);
+            padding: var(--spacing-sm) var(--spacing-md);
             border-radius: var(--border-radius);
             text-decoration: none;
             font-weight: 600;
@@ -243,57 +196,34 @@
             font-size: 1rem;
             text-align: center;
             min-width: 200px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
         }
 
         .btn--primary {
-            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-            color: var(--color-dark);
-            box-shadow: 0 4px 20px rgba(0, 255, 127, 0.3);
+            background: var(--color-accent);
+            color: var(--color-white);
         }
 
         .btn--primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 255, 127, 0.4);
+            background: #DC2626;
+            transform: translateY(-2px);
         }
 
         .btn--secondary {
-            background: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
+            background: var(--color-secondary);
+            color: var(--color-white);
         }
 
         .btn--secondary:hover {
-            background: var(--color-primary);
-            color: var(--color-dark);
-            transform: translateY(-3px);
+            background: #047857;
+            transform: translateY(-2px);
         }
 
         /* Secciones generales */
         .section {
             padding: var(--spacing-xl) var(--spacing-sm);
-            position: relative;
         }
 
-        .section--dark {
+        .section--bg {
             background: var(--color-dark);
         }
 
@@ -305,23 +235,10 @@
         .section__title {
             font-family: var(--font-heading);
             font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--color-text);
+            font-weight: 700;
+            color: var(--color-primary);
             text-align: center;
             margin-bottom: var(--spacing-sm);
-            position: relative;
-        }
-
-        .section__title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-            border-radius: 2px;
         }
 
         .section__subtitle {
@@ -334,46 +251,7 @@
             margin-right: auto;
         }
 
-        /* About Section */
-        .about {
-            background: var(--color-dark);
-        }
-
-        .about__content {
-            display: grid;
-            gap: var(--spacing-lg);
-            align-items: center;
-        }
-
-        .about__text {
-            max-width: none;
-        }
-
-        .about__description {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-            color: var(--color-text-light);
-        }
-
-        .about__credentials {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing-md);
-        }
-
-        .credential {
-            background: rgba(0, 255, 127, 0.1);
-            color: var(--color-primary);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border: 1px solid rgba(0, 255, 127, 0.3);
-        }
-
-        /* Plans Section */
+        /* Planes de entrenamiento */
         .plans {
             display: grid;
             gap: var(--spacing-md);
@@ -382,84 +260,94 @@
 
         .plan {
             background: var(--color-card);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
             border-radius: var(--border-radius);
             padding: var(--spacing-lg);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(0, 255, 127, 0.2);
-        }
-
-        .plan::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
         }
 
         .plan:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow);
-            border-color: var(--color-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
         }
 
         .plan--featured {
-            border: 2px solid var(--color-primary);
-            box-shadow: 0 0 30px rgba(0, 255, 127, 0.2);
+            border: 2px solid var(--color-accent);
         }
 
-        .plan--featured::after {
+        .plan--featured::before {
             content: 'MÁS POPULAR';
             position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--color-primary);
-            color: var(--color-dark);
-            padding: 5px 40px;
+            top: 0;
+            right: 0;
+            background: var(--color-accent);
+            color: var(--color-white);
+            padding: var(--spacing-xs) var(--spacing-sm);
             font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            transform: rotate(45deg);
-            letter-spacing: 1px;
+            font-weight: 600;
+            border-bottom-left-radius: var(--border-radius);
         }
 
-        .plan__name {
+        .plan__icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .plan__icon--inicio {
+            color: var(--color-secondary);
+        }
+
+        .plan__icon--transformacion {
+            color: var(--color-accent);
+        }
+
+        .plan__icon--total {
+            color: var(--color-primary);
+        }
+
+        .plan__title {
             font-family: var(--font-heading);
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: var(--spacing-xs);
-            color: var(--color-primary);
-            text-transform: uppercase;
         }
 
         .plan__tagline {
-            color: var(--color-text-light);
+            font-size: 0.9rem;
+            color: var(--color-secondary);
             font-style: italic;
             margin-bottom: var(--spacing-sm);
-            font-size: 0.95rem;
+        }
+
+        .plan__description {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .plan__icon--duo {
+            color: var(--color-secondary);
+        }
+
+        .plan__icon--familia {
+            color: var(--color-accent);
         }
 
         .plan__price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--color-text);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
             margin-bottom: var(--spacing-sm);
-            font-family: var(--font-heading);
         }
 
         .plan__price-period {
             font-size: 1rem;
             font-weight: 400;
             color: var(--color-text-light);
-        }
-
-        .plan__description {
-            color: var(--color-text-light);
-            margin-bottom: var(--spacing-md);
-            line-height: 1.6;
         }
 
         .plan__features {
@@ -471,99 +359,246 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: var(--spacing-xs);
-            padding: var(--spacing-xs) 0;
         }
 
         .plan__feature-icon {
-            color: var(--color-primary);
-            margin-right: var(--spacing-sm);
+            color: var(--color-secondary);
+            margin-right: var(--spacing-xs);
             margin-top: 2px;
             flex-shrink: 0;
-            font-size: 0.875rem;
         }
 
-        /* Testimonials */
-        .testimonials {
-            background: var(--color-dark);
-        }
-
-        .testimonials__grid {
+        /* Preview de valor */
+        .preview__grid {
             display: grid;
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
         }
 
-        .testimonial {
+        .preview__item {
             background: var(--color-card);
-            padding: var(--spacing-lg);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
             border-radius: var(--border-radius);
-            border: 1px solid rgba(0, 255, 127, 0.2);
+            overflow: hidden;
             transition: var(--transition);
         }
 
-        .testimonial:hover {
-            border-color: var(--color-primary);
+        .preview__item:hover {
             transform: translateY(-5px);
         }
 
-        .testimonial__text {
-            font-style: italic;
-            margin-bottom: var(--spacing-md);
-            line-height: 1.7;
-            color: var(--color-text-light);
+        .preview__video {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
         }
 
-        .testimonial__author {
+        .preview__video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .preview__content {
+            padding: var(--spacing-md);
+        }
+
+        .preview__title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
             font-weight: 600;
-            color: var(--color-primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: var(--spacing-sm);
         }
 
-        /* Contact Section */
-        .contact {
+        .preview__description {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .preview__badge {
+            background: var(--color-accent);
+            color: var(--color-white);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Quiz interactivo */
+        .quiz {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .quiz__step {
+            display: none;
             text-align: center;
         }
 
-        .contact__info {
+        .quiz__step.active {
+            display: block;
+        }
+
+        .quiz__question {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .quiz__options {
             display: grid;
-            gap: var(--spacing-md);
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .quiz__option {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: var(--color-white);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .quiz__option:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .quiz__progress {
+            background: rgba(255, 255, 255, 0.2);
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+        }
+
+        .quiz__progress-bar {
+            background: var(--color-accent);
+            height: 100%;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .quiz__result {
+            display: none;
+            text-align: center;
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-md);
+        }
+
+        .quiz__result.show {
+            display: block;
+        }
+
+        .quiz__result-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-accent);
+        }
+
+        /* Contacto */
+        .contact__grid {
+            display: grid;
+            gap: var(--spacing-lg);
             margin-top: var(--spacing-lg);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        .contact__info {
+            background: var(--color-card);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
         }
 
         .contact__item {
-            background: var(--color-card);
-            padding: var(--spacing-lg);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(0, 255, 127, 0.2);
-            transition: var(--transition);
-        }
-
-        .contact__item:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-5px);
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
         }
 
         .contact__icon {
-            font-size: 2rem;
-            color: var(--color-primary);
-            margin-bottom: var(--spacing-sm);
+            background: var(--color-primary);
+            color: var(--color-white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-sm);
+            flex-shrink: 0;
+        }
+
+        .contact__text {
+            flex: 1;
         }
 
         .contact__label {
             font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: var(--spacing-xs);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--color-primary);
+            display: block;
         }
 
-        .contact__value {
-            color: var(--color-text-light);
-            font-size: 1.125rem;
+        .form {
+            background: var(--color-card);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+        }
+
+        .form__group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form__label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .form__input,
+        .form__textarea,
+        .form__select {
+            width: 100%;
+            padding: var(--spacing-sm);
+            background: var(--color-dark);
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            color: var(--color-text);
+            transition: var(--transition);
+        }
+
+        .form__input:focus,
+        .form__textarea:focus,
+        .form__select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        .form__textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         /* WhatsApp flotante */
@@ -575,54 +610,52 @@
         }
 
         .whatsapp-float__btn {
-            background: linear-gradient(45deg, #25D366, #128C7E);
-            color: var(--color-text);
-            width: 70px;
-            height: 70px;
+            background: #25D366;
+            color: var(--color-white);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             text-decoration: none;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
             transition: var(--transition);
             animation: pulse 2s infinite;
         }
 
         .whatsapp-float__btn:hover {
+            background: #128C7E;
             transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         /* Footer */
         .footer {
-            background: var(--color-dark);
-            color: var(--color-text);
+            background: var(--color-primary);
+            color: var(--color-white);
             padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-md);
             text-align: center;
-            border-top: 1px solid rgba(0, 255, 127, 0.2);
         }
 
         .footer__content {
             max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            gap: var(--spacing-md);
         }
 
         .footer__logo {
             font-family: var(--font-heading);
-            font-size: 1.75rem;
-            font-weight: 800;
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: var(--spacing-sm);
-            color: var(--color-primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .footer__description {
@@ -631,67 +664,84 @@
             max-width: 400px;
             margin-left: auto;
             margin-right: auto;
-            color: var(--color-text-light);
         }
 
         .footer__social {
             display: flex;
             justify-content: center;
-            gap: var(--spacing-md);
+            gap: var(--spacing-sm);
             margin-bottom: var(--spacing-md);
         }
 
         .footer__social-link {
-            color: var(--color-text-light);
+            color: var(--color-white);
             font-size: 1.5rem;
             transition: var(--transition);
-            width: 50px;
-            height: 50px;
-            border: 1px solid rgba(0, 255, 127, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .footer__social-link:hover {
-            color: var(--color-primary);
-            border-color: var(--color-primary);
-            transform: translateY(-3px);
+            color: var(--color-accent);
+            transform: translateY(-2px);
         }
 
         .footer__copyright {
-            border-top: 1px solid rgba(0, 255, 127, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: var(--spacing-md);
-            opacity: 0.6;
-            font-size: 0.875rem;
+            opacity: 0.7;
         }
 
         /* Responsive */
         @media (min-width: 768px) {
-            .hero__title {
-                font-size: 4rem;
+            .nav__toggle {
+                display: none;
             }
 
-            .about__content {
-                grid-template-columns: 1fr 1fr;
+            .hero__title {
+                font-size: 3.5rem;
+            }
+
+            .section__title {
+                font-size: 3rem;
             }
 
             .plans {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+
+            .preview__grid {
                 grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             }
 
-            .testimonials__grid {
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            .quiz__options {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .contact__info {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            .contact__grid {
+                grid-template-columns: 1fr 1.5fr;
+            }
+
+            .footer__content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
         }
 
         @media (min-width: 1024px) {
+            .hero {
+                text-align: left;
+                padding: var(--spacing-xl) var(--spacing-sm);
+            }
+
+            .hero__content {
+                max-width: none;
+                margin: 0;
+            }
+
             .plans {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .preview__grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
@@ -706,15 +756,15 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(10, 10, 15, 0.98);
-                backdrop-filter: blur(20px);
+                background: var(--color-card);
                 flex-direction: column;
                 padding: var(--spacing-md);
+                box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+                border-bottom: 1px solid rgba(139, 92, 246, 0.2);
                 transform: translateY(-100%);
                 opacity: 0;
                 visibility: hidden;
                 transition: var(--transition);
-                border-top: 1px solid rgba(0, 255, 127, 0.2);
             }
 
             .nav__menu.active {
@@ -724,11 +774,11 @@
             }
 
             .hero__title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .hero__stats {
-                gap: var(--spacing-md);
+                gap: var(--spacing-sm);
             }
 
             .section__title {
@@ -739,58 +789,42 @@
                 padding: var(--spacing-md);
             }
 
+            .quiz__options {
+                grid-template-columns: 1fr;
+            }
+
             .whatsapp-float {
                 bottom: 20px;
                 right: 20px;
-            }
-
-            .whatsapp-float__btn {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
             }
         }
 
         /* Animaciones de entrada */
         .fade-in {
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Efectos especiales */
-        .glow {
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary), 0 0 30px var(--color-primary);
-            }
-            to {
-                text-shadow: 0 0 20px var(--color-primary), 0 0 30px var(--color-primary), 0 0 40px var(--color-primary);
-            }
-        }
     </style>
-</head>
-<body>
+
+
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <a href="#inicio" class="nav__logo">Juan David</a>
+            <a href="#inicio" class="nav__logo">FitCoach Pro</a>
             <button class="nav__toggle" id="navToggle">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav__menu" id="navMenu">
                 <li><a href="#inicio" class="nav__link">Inicio</a></li>
-                <li><a href="#sobre-mi" class="nav__link">Sobre Mí</a></li>
                 <li><a href="#planes" class="nav__link">Planes</a></li>
-                <li><a href="#testimonios" class="nav__link">Testimonios</a></li>
+                <li><a href="#preview" class="nav__link">Cómo Trabajamos</a></li>
+                <li><a href="#quiz" class="nav__link">Quiz</a></li>
                 <li><a href="#contacto" class="nav__link">Contacto</a></li>
             </ul>
         </nav>
@@ -799,21 +833,17 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero__content">
-            <p class="hero__subtitle">Entrenador Personal Certificado</p>
-            <h1 class="hero__title glow">Juan David Martínez</h1>
-            <p class="hero__description">
-                Licenciado en Educación Física, apasionado por el movimiento y el potencial del cuerpo humano. 
-                Transformo vidas a través del acompañamiento cercano y el conocimiento técnico.
-            </p>
+            <h1 class="hero__title">¿Listo para la mejor versión de ti mismo?</h1>
+            <p class="hero__subtitle">Transforma tu cuerpo con planes de entrenamiento personalizado y resultados garantizados</p>
             
             <div class="hero__stats">
                 <div class="hero__stat">
-                    <span class="hero__stat-number">3+</span>
-                    <span class="hero__stat-text">Años de experiencia</span>
+                    <span class="hero__stat-number">200+</span>
+                    <span class="hero__stat-text">Transformaciones exitosas</span>
                 </div>
                 <div class="hero__stat">
-                    <span class="hero__stat-number">UCC</span>
-                    <span class="hero__stat-text">Licenciado</span>
+                    <span class="hero__stat-number">$180k</span>
+                    <span class="hero__stat-text">Desde / mes</span>
                 </div>
                 <div class="hero__stat">
                     <span class="hero__stat-number">100%</span>
@@ -821,227 +851,395 @@
                 </div>
             </div>
 
-            <a href="#contacto" class="btn btn--primary">Comienza tu transformación</a>
-        </div>
-    </section>
-
-    <!-- Sobre Mí -->
-    <section id="sobre-mi" class="section about">
-        <div class="container">
-            <h2 class="section__title fade-in">¿Quién Soy?</h2>
-            <div class="about__content fade-in">
-                <div class="about__text">
-                    <p class="about__description">
-                        Soy <strong>@juanda.entrenador</strong>, licenciado en Educación Física de la UCC Bucaramanga, 
-                        apasionado por el movimiento y el potencial del cuerpo humano. Cuento con más de 3 años de 
-                        experiencia guiando a personas en sus procesos deportivos.
-                    </p>
-                    <p class="about__description">
-                        Me especializo en entrenamientos de gimnasio enfocados en objetivos reales y saludables. 
-                        Me motiva generar cambios sostenibles a través del acompañamiento cercano, el conocimiento 
-                        técnico y la energía que conecta la mente y el cuerpo.
-                    </p>
-                    <div class="about__credentials">
-                        <span class="credential">Licenciado UCC Bucaramanga</span>
-                        <span class="credential">3+ años experiencia</span>
-                        <span class="credential">Especialista en gimnasio</span>
-                        <span class="credential">Objetivos reales</span>
-                        <span class="credential">Cambios sostenibles</span>
-                    </div>
-                </div>
-            </div>
+            <a href="#quiz" class="btn btn--primary">Descubrir mi plan ideal</a>
         </div>
     </section>
 
     <!-- Planes de entrenamiento -->
-    <section id="planes" class="section">
+    <section id="planes" class="section section--bg">
         <div class="container">
-            <h2 class="section__title fade-in">Mis Planes de Entrenamiento</h2>
-            <p class="section__subtitle fade-in">
-                Diseñados para adaptarse a tu estilo de vida y objetivos específicos
-            </p>
+            <h2 class="section__title fade-in visible">Elige el plan perfecto para tu objetivo</h2>
+            <p class="section__subtitle fade-in visible">Planes diseñados para adaptarse a tu estilo de vida y metas específicas</p>
 
-            <div class="plans fade-in">
+            <div class="plans fade-in visible">
                 <div class="plan">
-                    <h3 class="plan__name">Plan Semi-Personalizado</h3>
-                    <p class="plan__tagline">Entrena con propósito, no en automático</p>
+                    <i class="fas fa-seedling plan__icon plan__icon--inicio"></i>
+                    <h3 class="plan__title">Plan Inicio</h3>
                     <div class="plan__price">
-                        $260.000
-                        <span class="plan__price-period"> COP/mes</span>
+                        $180.000
+                        <span class="plan__price-period">/mes</span>
                     </div>
-                    <p class="plan__description">
-                        Diseñado para quienes comparten metas comunes pero valoran el acompañamiento 
-                        cercano y estructurado. Trabajamos en equipo con un enfoque individualizado.
-                    </p>
                     <ul class="plan__features">
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Sesiones en grupo reducido</span>
+                            <span>2 sesiones presenciales/semana</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Seguimiento constante y personalizado</span>
+                            <span>Rutina personalizada según tu nivel</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Ambiente de comunidad y apoyo</span>
+                            <span>Seguimiento por WhatsApp</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Guía nutricional alineada a objetivos</span>
+                            <span>Evaluación inicial gratuita</span>
                         </li>
                     </ul>
-                    <a href="#contacto" class="btn btn--secondary">Consultar disponibilidad</a>
+                    <a href="#contacto" class="btn btn--secondary">Elegir este plan</a>
                 </div>
 
                 <div class="plan plan--featured">
-                    <h3 class="plan__name">Plan Personalizado</h3>
-                    <p class="plan__tagline">Tu entrenamiento, a tu medida</p>
+                    <i class="fas fa-dumbbell plan__icon plan__icon--transformacion"></i>
+                    <h3 class="plan__title">Plan Transformación</h3>
                     <div class="plan__price">
-                        $400.000
-                        <span class="plan__price-period"> COP/mes</span>
+                        $280.000
+                        <span class="plan__price-period">/mes</span>
                     </div>
-                    <p class="plan__description">
-                        Para quienes buscan un acompañamiento totalmente enfocado en su progreso individual. 
-                        Rutinas 100% adaptadas con seguimiento constante y disponibilidad total.
-                    </p>
                     <ul class="plan__features">
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Sesiones 1 a 1 completamente personalizadas</span>
+                            <span>3 sesiones presenciales/semana</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Evaluación física y bienestar integral</span>
+                            <span>Rutina + guía nutricional básica</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Ajustes en tiempo real según progreso</span>
+                            <span>Seguimiento diario por WhatsApp</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Guía nutricional completa personalizada</span>
-                        </li>
-                        <li class="plan__feature">
-                            <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Disponibilidad total para resolver dudas</span>
+                            <span>Evaluación y ajustes mensuales</span>
                         </li>
                     </ul>
-                    <a href="#contacto" class="btn btn--primary">Empezar ahora</a>
+                    <a href="#contacto" class="btn btn--primary">Elegir este plan</a>
                 </div>
 
                 <div class="plan">
-                    <h3 class="plan__name">Plan Online Personalizado</h3>
-                    <p class="plan__tagline">Resultados reales, estés donde estés</p>
+                    <i class="fas fa-trophy plan__icon plan__icon--total"></i>
+                    <h3 class="plan__title">Plan Total</h3>
                     <div class="plan__price">
-                        $300.000
+                        $380.000
+                        <span class="plan__price-period">/mes</span>
+                    </div>
+                    <ul class="plan__features">
+                        <li class="plan__feature">
+                            <i class="fas fa-check plan__feature-icon"></i>
+                            <span>4 sesiones presenciales/semana</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-check plan__feature-icon"></i>
+                            <span>Rutina + plan nutricional completo</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-check plan__feature-icon"></i>
+                            <span>Seguimiento diario + coaching motivacional</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-check plan__feature-icon"></i>
+                            <span>Evaluación quincenal + suplementación</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--secondary">Elegir este plan</a>
+                </div>
+
+                <div class="plan">
+                    <i class="fas fa-user-friends plan__icon plan__icon--duo"></i>
+                    <h3 class="plan__title">Plan Dúo</h3>
+                    <p class="plan__tagline">Entrena en pareja, crece en equipo</p>
+                    <div class="plan__price">
+                        $600.000
                         <span class="plan__price-period"> COP/mes</span>
                     </div>
                     <p class="plan__description">
-                        Experiencia de entrenamiento totalmente personalizada sin importar tu ubicación. 
-                        Acompañamiento constante por videollamada y WhatsApp para que nunca entrenes solo.
+                        Ideal para quienes desean compartir su proceso de transformación con alguien más.
+                        Este plan combina entrenamiento semi-personalizado con dinámicas en pareja que
+                        fortalecen tanto el cuerpo como la motivación.
                     </p>
                     <ul class="plan__features">
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Rutinas adaptadas a tus capacidades</span>
+                            <span>Rutinas adaptadas a capacidades de cada uno</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Seguimiento por videollamada y WhatsApp</span>
+                            <span>Seguimiento conjunto y personalizado</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Guía nutricional alineada a metas</span>
+                            <span>Acompañamiento constante y guía nutricional</span>
                         </li>
                         <li class="plan__feature">
                             <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Recomendaciones de suplementación</span>
-                        </li>
-                        <li class="plan__feature">
-                            <i class="fas fa-check plan__feature-icon"></i>
-                            <span>Proceso seguro y eficaz</span>
+                            <span>Metas individuales dentro del trabajo en equipo</span>
                         </li>
                     </ul>
-                    <a href="#contacto" class="btn btn--secondary">Consultar modalidad</a>
+                    <a href="#contacto" class="btn btn--secondary">Entrenar en pareja</a>
+                </div>
+
+                <div class="plan">
+                    <i class="fas fa-users plan__icon plan__icon--familia"></i>
+                    <h3 class="plan__title">Plan Parche o Familia</h3>
+                    <p class="plan__tagline">Entrena con los tuyos</p>
+                    <div class="plan__price" style="font-size: 1.75rem;">
+                        Desde $260.000
+                        <span class="plan__price-period"> COP/mes</span>
+                    </div>
+                    <p class="plan__description">
+                        Porque entrenar en grupo no solo suma fuerza, también multiplica la motivación.
+                        Para amigos o familias que quieren entrenar juntos con objetivos similares,
+                        sin perder la atención semi-personalizada.
+                    </p>
+                    <ul class="plan__features">
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>1 persona: $260.000</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>2 personas: $500.000</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>3 personas: $700.000</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>4 personas: $860.000</span>
+                        </li>
+                        <li class="plan__feature">
+                            <i class="fas fa-users plan__feature-icon"></i>
+                            <span>5 personas: $1.000.000</span>
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--secondary">Consultar grupo</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonios -->
-    <section id="testimonios" class="section testimonials">
+    <!-- Preview de valor -->
+    <section id="preview" class="section">
         <div class="container">
-            <h2 class="section__title fade-in">Lo que dicen mis clientes</h2>
-            <p class="section__subtitle fade-in">
-                Testimonios reales de personas que han transformado su vida
-            </p>
+            <h2 class="section__title fade-in visible">Mira cómo trabajamos juntos</h2>
+            <p class="section__subtitle fade-in visible">Una pequeña muestra de la experiencia completa que recibirás</p>
 
-            <div class="testimonials__grid fade-in">
-                <div class="testimonial">
-                    <p class="testimonial__text">
-                        "Hablar de Juan es hablar de vocación, talento y compromiso. En solo tres meses vi resultados reales, 
-                        saludables y sostenibles. Más allá del trabajo físico, su guía me ayudó a conectar con mi bienestar 
-                        mental y emocional, aprendiendo a verme y tratarme con más amor y respeto."
-                    </p>
-                    <p class="testimonial__author">Julián García</p>
+            <div class="preview__badge fade-in visible">Esto es solo el 10% de lo que incluye tu plan</div>
+
+            <div class="preview__grid fade-in visible">
+                <div class="preview__item">
+                    <div class="preview__video">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="preview__content">
+                        <h3 class="preview__title">Ejercicios Funcionales</h3>
+                        <p class="preview__description">Movimientos que mejoran tu día a día y fortalecen todo tu cuerpo</p>
+                        <a href="#contacto" class="btn btn--primary">Ver programa completo</a>
+                    </div>
                 </div>
 
-                <div class="testimonial">
-                    <p class="testimonial__text">
-                        "Desde el primer día, JuanDa creyó en mí y me impulsó a dar lo mejor de mi misma. Gracias a su 
-                        profesionalismo, dedicación y motivación constante, logré cambios físicos notables: gané peso de 
-                        manera saludable, aumenté mi fuerza, mejoré mi postura y resistencia. Con frases como 'una más, bebé, 
-                        tú puedes', logra sacar lo mejor de mí incluso en mis días más difíciles."
-                    </p>
-                    <p class="testimonial__author">Yuli Corona</p>
+                <div class="preview__item">
+                    <div class="preview__video">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="preview__content">
+                        <h3 class="preview__title">Técnica Perfecta</h3>
+                        <p class="preview__description">Aprende la forma correcta para maximizar resultados y evitar lesiones</p>
+                        <a href="#contacto" class="btn btn--primary">Ver programa completo</a>
+                    </div>
+                </div>
+
+                <div class="preview__item">
+                    <div class="preview__video">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="preview__content">
+                        <h3 class="preview__title">Seguimiento Personal</h3>
+                        <p class="preview__description">Así mantenemos comunicación constante para ajustar tu progreso</p>
+                        <a href="#contacto" class="btn btn--primary">Ver programa completo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz interactivo -->
+    <section id="quiz" class="section section--bg">
+        <div class="container">
+            <h2 class="section__title fade-in visible">Encuentra tu plan ideal en 2 minutos</h2>
+            
+            <div class="quiz fade-in visible" id="fitnessQuiz">
+                <div class="quiz__progress">
+                    <div class="quiz__progress-bar" id="progressBar" style="width: 16.6667%;"></div>
+                </div>
+
+                <div class="quiz__step active" data-step="1">
+                    <h3 class="quiz__question">¿Cuál es tu objetivo principal?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-value="peso">🔥 Bajar de peso</button>
+                        <button class="quiz__option" data-value="tonificar">💪 Tonificar músculo</button>
+                        <button class="quiz__option" data-value="ganar">🏋️ Ganar músculo</button>
+                        <button class="quiz__option" data-value="mantener">🏃 Mantenerme activo</button>
+                    </div>
+                </div>
+
+                <div class="quiz__step" data-step="2">
+                    <h3 class="quiz__question">¿Cuánto tiempo puedes entrenar?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-value="30min">⏰ 30 minutos/día</button>
+                        <button class="quiz__option" data-value="1hora">⏱️ 1 hora/día</button>
+                        <button class="quiz__option" data-value="fines">📅 Solo fines de semana</button>
+                    </div>
+                </div>
+
+                <div class="quiz__step" data-step="3">
+                    <h3 class="quiz__question">¿Cuál es tu experiencia?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-value="principiante">🌱 Principiante</button>
+                        <button class="quiz__option" data-value="intermedio">🌿 Intermedio</button>
+                        <button class="quiz__option" data-value="avanzado">🏆 Avanzado</button>
+                    </div>
+                </div>
+
+                <div class="quiz__step" data-step="4">
+                    <h3 class="quiz__question">¿Has entrenado con profesional antes?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-value="si">✅ Sí, con entrenador</button>
+                        <button class="quiz__option" data-value="no">❌ No, nunca</button>
+                        <button class="quiz__option" data-value="gimnasio">🏋️ Solo en gimnasio</button>
+                    </div>
+                </div>
+
+                <div class="quiz__step" data-step="5">
+                    <h3 class="quiz__question">¿Cuándo quieres empezar?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-value="ya">🚀 Esta semana</button>
+                        <button class="quiz__option" data-value="pronto">📅 Próximo mes</button>
+                        <button class="quiz__option" data-value="mirando">👀 Solo estoy mirando</button>
+                    </div>
+                </div>
+
+                <div class="quiz__step" data-step="6">
+                    <h3 class="quiz__question">¿Cuál es tu mayor obstáculo?</h3>
+                    <div class="quiz__options">
+                        <button class="quiz__option" data-value="tiempo">⏰ Falta de tiempo</button>
+                        <button class="quiz__option" data-value="motivacion">💭 Motivación</button>
+                        <button class="quiz__option" data-value="conocimiento">🤔 No sé cómo hacerlo</button>
+                        <button class="quiz__option" data-value="lesiones">🩹 Lesiones previas</button>
+                    </div>
+                </div>
+
+                <div class="quiz__result" id="quizResult">
+                    <h3 class="quiz__result-title">Tu plan recomendado es:</h3>
+                    <h4 id="recommendedPlan"></h4>
+                    <p id="planDescription"></p>
+                    <a href="#contacto" class="btn btn--primary" id="contactBtn">Contactar ahora</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="section contact">
+    <section id="contacto" class="section">
         <div class="container">
-            <h2 class="section__title fade-in">¿Listo para empezar tu transformación?</h2>
-            <p class="section__subtitle fade-in">
-                Contáctame y comencemos a trabajar juntos hacia tus objetivos
-            </p>
+            <h2 class="section__title fade-in visible">Empecemos tu transformación</h2>
+            <p class="section__subtitle fade-in visible">Primera evaluación completamente GRATIS • Respondo en menos de 2 horas</p>
 
-            <div class="contact__info fade-in">
-                <div class="contact__item">
-                    <div class="contact__icon">
-                        <i class="fab fa-instagram"></i>
+            <div class="contact__grid fade-in visible">
+                <div class="contact__info">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--spacing-md); color: var(--color-primary);">Información de contacto</h3>
+                    
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact__text">
+                            <span class="contact__label">WhatsApp</span>
+                            <span>+57 318 761 8080</span>
+                        </div>
                     </div>
-                    <div class="contact__label">Instagram</div>
-                    <div class="contact__value">@juanda.entrenador</div>
+
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact__text">
+                            <span class="contact__label">Email</span>
+                            <span>info@fitcoachpro.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact__text">
+                            <span class="contact__label">Ubicación</span>
+                            <span>Bucaramanga, Santander</span>
+                        </div>
+                    </div>
+
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact__text">
+                            <span class="contact__label">Horarios</span>
+                            <span>Lun-Vie: 6AM-9PM<br>Sáb: 7AM-5PM</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="contact__item">
-                    <div class="contact__icon">
-                        <i class="fab fa-whatsapp"></i>
+                <form class="form" netlify="" name="contacto-entrenador">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: var(--spacing-md); color: var(--color-primary);">Solicita tu consulta gratuita</h3>
+                    
+                    <div class="form__group">
+                        <label for="nombre" class="form__label">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" class="form__input" required="">
                     </div>
-                    <div class="contact__label">WhatsApp</div>
-                    <div class="contact__value">Consulta disponibilidad</div>
-                </div>
 
-                <div class="contact__item">
-                    <div class="contact__icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                    <div class="form__group">
+                        <label for="telefono" class="form__label">WhatsApp</label>
+                        <input type="tel" id="telefono" name="telefono" class="form__input" required="">
                     </div>
-                    <div class="contact__label">Ubicación</div>
-                    <div class="contact__value">Bucaramanga, Santander</div>
-                </div>
-            </div>
 
-            <div style="margin-top: var(--spacing-lg);">
-                <a href="#contacto" class="btn btn--primary">Solicitar información</a>
+                    <div class="form__group">
+                        <label for="objetivo" class="form__label">Tu objetivo principal</label>
+                        <select id="objetivo" name="objetivo" class="form__select" required="">
+                            <option value="">Selecciona tu objetivo</option>
+                            <option value="bajar-peso">Bajar de peso</option>
+                            <option value="tonificar">Tonificar</option>
+                            <option value="ganar-musculo">Ganar músculo</option>
+                            <option value="mantenimiento">Mantenimiento</option>
+                        </select>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="experiencia" class="form__label">Experiencia en ejercicio</label>
+                        <select id="experiencia" name="experiencia" class="form__select" required="">
+                            <option value="">Selecciona tu nivel</option>
+                            <option value="principiante">Principiante</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="avanzado">Avanzado</option>
+                        </select>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="mensaje" class="form__label">Cuéntame más sobre tu situación</label>
+                        <textarea id="mensaje" name="mensaje" class="form__textarea" placeholder="¿Has intentado antes? ¿Tienes alguna lesión? ¿Cuál es tu mayor reto?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary">Solicitar consulta gratuita</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- WhatsApp flotante -->
-    <a href="https://wa.me/573001234567?text=Hola Juan David, me interesa conocer más sobre tus planes de entrenamiento personalizado" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/573187618080?text=Hola Juan David, me interesa conocer más sobre tus planes de entrenamiento personalizado" class="whatsapp-float" target="_blank">
         <div class="whatsapp-float__btn">
             <i class="fab fa-whatsapp"></i>
         </div>
@@ -1050,27 +1248,23 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__content">
-            <div class="footer__logo">Juan David Martínez</div>
-            <p class="footer__description">
-                Entrenador Personal Certificado en Bucaramanga. Transformando vidas a través del ejercicio personalizado 
-                y el acompañamiento constante.
-            </p>
-            
-            <div class="footer__social">
-                <a href="https://instagram.com/juanda.entrenador" class="footer__social-link" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="footer__social-link">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="footer__social-link">
-                    <i class="fab fa-tiktok"></i>
-                </a>
+            <div>
+                <div class="footer__logo">FitCoach Pro</div>
+                <p class="footer__description">
+                    Tu entrenador personal en Bucaramanga. Transformamos vidas a través del ejercicio personalizado y el acompañamiento constante.
+                </p>
+                
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/juanda.entrenador_7?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="footer__social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-tiktok"></i></a>
+                </div>
             </div>
         </div>
         
         <div class="footer__copyright">
-            <p>&copy; 2024 Juan David Martínez - Entrenador Personal. Todos los derechos reservados.</p>
+            <p>© 2024 FitCoach Pro. Todos los derechos reservados. Desarrollado por Webloom.</p>
         </div>
     </footer>
 
@@ -1101,10 +1295,101 @@
             });
         });
 
+        // Quiz interactivo
+        const quiz = document.getElementById('fitnessQuiz');
+        const progressBar = document.getElementById('progressBar');
+        const quizResult = document.getElementById('quizResult');
+        const steps = document.querySelectorAll('.quiz__step');
+        
+        let currentStep = 1;
+        let answers = {};
+
+        function updateProgress() {
+            const progress = (currentStep / steps.length) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        function showStep(stepNumber) {
+            steps.forEach(step => {
+                step.classList.remove('active');
+                if (parseInt(step.dataset.step) === stepNumber) {
+                    step.classList.add('active');
+                }
+            });
+        }
+
+        function getRecommendation() {
+            const { tiempo, experiencia, objetivo, profesional, cuando, obstaculo } = answers;
+            
+            // Lógica simple de recomendación
+            if (tiempo === 'fines' || experiencia === 'principiante' || cuando === 'mirando') {
+                return {
+                    plan: 'Plan Inicio',
+                    description: 'Perfecto para comenzar tu transformación de manera gradual y sostenible. Con 2 sesiones semanales podrás crear el hábito mientras ves resultados reales.',
+                    price: '$180.000/mes'
+                };
+            } else if (objetivo === 'peso' || obstaculo === 'motivacion' || profesional === 'no') {
+                return {
+                    plan: 'Plan Transformación',
+                    description: 'El más popular. Con 3 sesiones semanales y seguimiento diario lograrás cambios significativos. Incluye guía nutricional básica.',
+                    price: '$280.000/mes'
+                };
+            } else {
+                return {
+                    plan: 'Plan Total',
+                    description: 'Para resultados máximos. 4 sesiones semanales, plan nutricional completo y coaching motivacional diario. Tu transformación garantizada.',
+                    price: '$380.000/mes'
+                };
+            }
+        }
+
+        function showResult() {
+            const recommendation = getRecommendation();
+            document.getElementById('recommendedPlan').textContent = recommendation.plan + ' - ' + recommendation.price;
+            document.getElementById('planDescription').textContent = recommendation.description;
+            
+            // Ocultar paso actual y mostrar resultado
+            steps.forEach(step => step.classList.remove('active'));
+            quizResult.classList.add('show');
+            progressBar.style.width = '100%';
+        }
+
+        // Event listeners para las opciones del quiz
+        quiz.addEventListener('click', (e) => {
+            if (e.target.classList.contains('quiz__option')) {
+                const value = e.target.dataset.value;
+                const step = e.target.closest('.quiz__step');
+                const stepNumber = parseInt(step.dataset.step);
+                
+                // Guardar respuesta
+                const questions = ['', 'objetivo', 'tiempo', 'experiencia', 'profesional', 'cuando', 'obstaculo'];
+                answers[questions[stepNumber]] = value;
+                
+                // Destacar opción seleccionada
+                step.querySelectorAll('.quiz__option').forEach(opt => {
+                    opt.style.background = 'rgba(255, 255, 255, 0.1)';
+                    opt.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                });
+                e.target.style.background = 'rgba(255, 255, 255, 0.3)';
+                e.target.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+                
+                // Avanzar al siguiente paso después de un delay
+                setTimeout(() => {
+                    if (currentStep < steps.length) {
+                        currentStep++;
+                        updateProgress();
+                        showStep(currentStep);
+                    } else {
+                        showResult();
+                    }
+                }, 800);
+            }
+        });
+
         // Animaciones al scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1134,48 +1419,12 @@
             });
         });
 
-        // Efecto parallax sutil en el hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // Contador animado
-        function animateCount(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const current = Math.floor(progress * (end - start) + start);
-                element.textContent = current + (element.textContent.includes('+') ? '+' : '');
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        // Activar contador cuando sea visible
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const number = entry.target.querySelector('.hero__stat-number');
-                    const text = number.textContent;
-                    if (text.includes('3+')) {
-                        animateCount(number, 0, 3, 2000);
-                        number.textContent = '3+';
-                    }
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        });
-
-        document.querySelectorAll('.hero__stat').forEach(stat => {
-            statsObserver.observe(stat);
-        });
+        // Inicializar progreso del quiz
+        updateProgress();
     </script>
+
+
+            <script>// Write JavaScript here</script>
+        
+    
 </body>
-</html>
